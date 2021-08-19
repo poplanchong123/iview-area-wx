@@ -22,6 +22,14 @@
     "linkage",
     "area"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/poplanchong123/iview-area-wx.git"
+  },
+  "bugs": {
+    "url": "https://github.com/poplanchong123/iview-area-wx/issues"
+  },
+  "homepage": "https://github.com/poplanchong123/iview-area-wx#readme",
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
