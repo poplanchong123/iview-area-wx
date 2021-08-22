@@ -67,7 +67,6 @@
 </template>
 
 <script>
-// import areaData from 'area-data';
 import areaData from '../util/pcaa-wx.js';
 import util from '../util';
 const areaLinkageArr = util.levelArr;
