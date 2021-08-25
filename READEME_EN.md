@@ -1,5 +1,8 @@
-
-# iview-area
+# iview-area-wx
+[![npm](https://img.shields.io/npm/v/iview-area-wx.svg)]()
+[![](https://img.shields.io/badge/Author-poplanchong-orange.svg)]()
+[![GitHub stars](https://img.shields.io/github/stars/poplanchong123/iview-area-wx.svg?style=social&label=Stars)](https://github.com/poplanchong123/iview-imgbox)
+[![GitHub forks](https://img.shields.io/github/forks/poplanchong123/iview-area-wx.svg?style=social&label=Fork)](https://github.com/poplanchong123/iview-imgbox)
 
 > An area-linkage-component bases on Vue and iView-UI components, data include China's provinces (municipalities), cities, counties and streets. Data sources: [area-data](https://github.com/dwqs/area-data)
 
