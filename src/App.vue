@@ -18,9 +18,12 @@ export default {
             name: 'this is test demo',
             resArr: [],
             //  resArr2:[ "天津市", "天津市", "和平区" ] 
-             resArr2:[ "天津市", "全部"] 
+            //  resArr2:[ "天津市", "全部"] 
             //  resArr2:[ "天津市", "全部", "全部"]// x
             //  resArr2:[ "全部"] 
+            // resArr2:[ "北京市", "北京市", "全部" ] 
+            // resArr2:["全部" ] 
+            resArr2:['全部' ] 
         }
     },
     methods: {
@@ -29,6 +32,7 @@ export default {
         },
         click(){
             this.resArr2 = [ "天津市", "天津市", "和平区" ] 
+            // this.resArr2 = [ "北京市", "北京市", "全部" ] 
 
         }
     }

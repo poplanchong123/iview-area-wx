@@ -62,7 +62,7 @@ export default {
         init() {
             let proData = [];
             if (this.customItem != '') {
-                areaData['86'][0] = this.customItem;//
+                areaData['86'][0] = this.customItem;// 修改
             }
             for (const p in areaData['86']) {
                 let proitem = {
@@ -86,12 +86,12 @@ export default {
                     while (this.value[i] && i <= this.showLevel) {
                         if (i === 0) {
                             if (this.customItem != '') {
-                                areaData['86'][0] = this.customItem;//
+                                areaData['86'][0] = this.customItem;// 修改
                             }
                             index = util.getIndex(areaData['86'], this.value[0]);
                         } else {
                             if (this.customItem != '') {
-                                areaData[index][0] = this.customItem;//
+                                areaData[index][0] = this.customItem;// 修改
                             }
                             index = util.getIndex(areaData[index], this.value[i]);
                         }
@@ -112,6 +112,10 @@ export default {
             let ifEmit = false;
             if (this.value && this.value.length !== 0) {
                 if (typeof res[0] === 'string') {
+                    // 修改，当维度不一样则返回true
+                    if(this.value.length!=this.oldData.length){
+                        ifEmit = true;
+                    }
                     if (this.value[this.value.length - 1] !== this.oldData[this.oldData.length - 1]) {
                         ifEmit = true;
                     }
@@ -134,7 +138,7 @@ export default {
         loadData(item, callback) {
             let childData = [];
             if (this.customItem != '') {
-                areaData[item.value][0] = this.customItem;//
+                areaData[item.value][0] = this.customItem;// 修改
             }
             let childs = areaData[item.value];
             for (const c in childs) {
@@ -188,6 +192,7 @@ export default {
     watch: {
         value(val) {
             if (this.canEmit(this.value)) {
+                debugger;
                 this.setDefaultValue();
             }
         }
