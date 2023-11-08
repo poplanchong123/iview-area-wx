@@ -78,7 +78,7 @@ export default {
             this.data = proData;
         },
         setDefaultValue() {
-            if (this.value[0]) {
+            if (this.value && this.value[0]) {
                 let select = [];
                 if (isNaN(parseInt(this.value[0]))) {
                     let i = 0;
