@@ -48,7 +48,11 @@ export default {
         },
         size: String,
         placeholder: String,
-        renderFormat: Function
+        renderFormat: Function,
+        customItem: {
+            type: String,
+            default: '',
+        }
     },
     data () {
         return {
@@ -66,6 +70,9 @@ export default {
     methods: {
         init () {
             let proData = [];
+            if(this.customItem!=''){
+                proData.push({value:0,label:'全部',children:[]});//
+            }
             for (const p in areaData['86']) {
                 let proitem = {
                     value: p,
@@ -130,6 +137,9 @@ export default {
         loadData (item, callback) {
             let childData = [];
             let childs = areaData[item.value];
+            if(this.customItem!=''){
+                childData.push({value:0,label:'全部',children:[]});//
+            }
             for (const c in childs) {
                 let childitem = {
                     value: c,
