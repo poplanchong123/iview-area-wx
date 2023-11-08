@@ -85,8 +85,14 @@ export default {
                     let index = '';
                     while (this.value[i] && i <= this.showLevel) {
                         if (i === 0) {
+                            if (this.customItem != '') {
+                                areaData['86'][0] = this.customItem;//
+                            }
                             index = util.getIndex(areaData['86'], this.value[0]);
                         } else {
+                            if (this.customItem != '') {
+                                areaData[index][0] = this.customItem;//
+                            }
                             index = util.getIndex(areaData[index], this.value[i]);
                         }
                         select.push(index);
