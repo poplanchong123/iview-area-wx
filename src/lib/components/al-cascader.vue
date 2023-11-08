@@ -1,16 +1,7 @@
 <template>
     <div>
-        <Cascader 
-            v-model="select" 
-            :data="data"
-            :load-data="loadData"
-            transfer
-            :disabled="disabled"
-            :size="size"
-            :placeholder="placeholder"
-            :render-format="renderFormat"
-            @on-change="handleChange"
-        />
+        <Cascader v-model="select" :data="data" :load-data="loadData" transfer :disabled="disabled" :size="size"
+            :placeholder="placeholder" :render-format="renderFormat" @on-change="handleChange" />
     </div>
 </template>
 
@@ -54,7 +45,7 @@ export default {
             default: '',
         }
     },
-    data () {
+    data() {
         return {
             data: [],
             select: [],
@@ -63,15 +54,15 @@ export default {
         };
     },
     computed: {
-        showLevel () {
+        showLevel() {
             return parseInt(this.level);
         }
     },
     methods: {
-        init () {
+        init() {
             let proData = [];
-            if(this.customItem!=''){
-                proData.push({value:0,label:'全部',children:[]});//
+            if (this.customItem != '') {
+                areaData['86'][0] = this.customItem;//
             }
             for (const p in areaData['86']) {
                 let proitem = {
@@ -86,7 +77,7 @@ export default {
             }
             this.data = proData;
         },
-        setDefaultValue () {
+        setDefaultValue() {
             if (this.value[0]) {
                 let select = [];
                 if (isNaN(parseInt(this.value[0]))) {
@@ -111,7 +102,7 @@ export default {
                 this.$emit('on-change', res);
             }
         },
-        canEmit (res) {
+        canEmit(res) {
             let ifEmit = false;
             if (this.value && this.value.length !== 0) {
                 if (typeof res[0] === 'string') {
@@ -128,18 +119,18 @@ export default {
             }
             return ifEmit;
         },
-        handleChange (resArr) {
+        handleChange(resArr) {
             let res = this.procesValue(resArr);
             this.oldData = res;
             this.$emit('input', res);
             this.$emit('on-change', res);
         },
-        loadData (item, callback) {
+        loadData(item, callback) {
             let childData = [];
-            let childs = areaData[item.value];
-            if(this.customItem!=''){
-                childData.push({value:0,label:'全部',children:[]});//
+            if (this.customItem != '') {
+                areaData[item.value][0] = this.customItem;//
             }
+            let childs = areaData[item.value];
             for (const c in childs) {
                 let childitem = {
                     value: c,
@@ -155,7 +146,7 @@ export default {
             item.loading = false;
             callback();
         },
-        procesValue (arr) {
+        procesValue(arr) {
             let i = 0;
             let res = [];
             while (arr[i]) {
@@ -182,14 +173,14 @@ export default {
             return res;
         }
     },
-    mounted () {
+    mounted() {
         this.init();
         if (this.canEmit(this.value)) {
             this.setDefaultValue();
         }
     },
     watch: {
-        value (val) {
+        value(val) {
             if (this.canEmit(this.value)) {
                 this.setDefaultValue();
             }
